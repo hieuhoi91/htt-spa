@@ -1,0 +1,254 @@
+{
+  "thumbnail": [
+    {
+      "id": 1,
+      "image": "/assets/thumbnail-1.jpg"
+    },
+    {
+      "id": 2,
+      "image": "/assets/thumbnail-2.jpg"
+    },
+    {
+      "id": 3,
+      "image": "/assets/thumbnail-3.jpg"
+    },
+    {
+      "id": 4,
+      "image": "/assets/thumbnail-4.jpg"
+    },
+    {
+      "id": 5,
+      "image": "/assets/thumbnail-5.jpg"
+    }
+  ],
+  "about": {
+    "gallery": {
+      "title": "Our Spa Gallery",
+      "subtitle": "Discover the serene beauty of our spa spaces",
+      "images": [
+        {
+          "id": 1,
+          "src": "/assets/thumbnail-1.jpg",
+          "alt": "Spa Reception Area",
+          "category": "reception"
+        },
+        {
+          "id": 2,
+          "src": "/assets/thumbnail-2.jpg",
+          "alt": "Treatment Room",
+          "category": "treatment"
+        },
+        {
+          "id": 3,
+          "src": "/assets/thumbnail-3.jpg",
+          "alt": "Relaxation Space",
+          "category": "relaxation"
+        },
+        {
+          "id": 4,
+          "src": "/assets/thumbnail-4.jpg",
+          "alt": "Spa Amenities",
+          "category": "amenities"
+        },
+        {
+          "id": 5,
+          "src": "/assets/thumbnail-5.jpg",
+          "alt": "Wellness Center",
+          "category": "wellness"
+        }
+      ]
+    },
+    "title": "Welcome to Her S spa",
+    "content_1": "HerSspa is a global chain of Mini Home Spas, providing comprehensive and effective solutions for skin care, rejuvenation, and full-body massage therapy.",
+    "content_2": "With devices and products utilizing exclusive ageLOC technology from the United States, capable of directly influencing and reactivating youthful cellular functions, helping to prevent aging at its root.",
+    "spa_section": {
+      "thumbnail": "/assets/about-thumbnail.jpg",
+      "title": "How long has it been... SINCE YOU LOVED YOURSELF?",
+      "subtitle_highlight": "SINCE YOU LOVED YOURSELF?",
+      "description_1": "Stress, insomnia, dull skin, premature aging, uncontrolled weight gain...",
+      "description_2": "All of these are signs that your body is crying for help due to accumulated toxins.",
+      "treatment_intro": "Treating yourself to a deep spa treatment is not just a relaxing gift, but also a way to:",
+      "benefits": [
+        "Detoxify the body from deep within",
+        "Rejuvenate skin and restore radiance",
+        "Release stress and nurture positive emotions",
+        "Boost immunity and improve overall health"
+      ],
+      "highlight_text": "When the body is healthy – skin will be radiant – soul will shine!",
+      "closing_text": "Let your youth always be full of energy and radiant beauty."
+    }
+  },
+  "services": {
+    "title": "Signature services",
+    "subtitle": "You are loved here",
+    "button_text": "VIEW ALL SERVICE",
+    "categories": ["BODY THERAPY", "SKIN REJUVENATION"],
+    "thumbnail": "/service-thumbnail.jpg",
+    "items": [
+      {
+        "id": 1,
+        "title": "ANTI-AGING & SKIN REJUVENATION",
+        "image": "/assets/service-1.jpg",
+        "benefits": [
+          "Skin detoxification",
+          "Elastin boosting essence",
+          "Comprehensive skin hydration"
+        ],
+        "category": "skincare"
+      },
+      {
+        "id": 2,
+        "title": "FACIAL LIFTING & FIRMING",
+        "image": "/assets/service-2.jpg",
+        "benefits": [
+          "Deep cleansing",
+          "Collagen regeneration",
+          "Lymphatic system activation",
+          "Facial lifting and rejuvenation"
+        ],
+        "category": "antiaging"
+      },
+      {
+        "id": 3,
+        "title": "RELAX BODY MASSAGE & CIRCULATION THERAPY",
+        "image": "/assets/service-3.jpg",
+        "benefits": [
+          "Combining modern science & traditional Eastern medicine",
+          "Comprehensive skin nourishment & neck-shoulder relaxation"
+        ],
+        "category": "massage"
+      }
+    ]
+  },
+  "whyChoose": {
+    "title": "OUTSTANDING ADVANTAGES",
+    "subtitle": "Why Choose Us",
+    "sections": [
+      {
+        "id": 1,
+        "number": "01",
+        "title": "Exclusive patented technology and high-quality products from the USA",
+        "description": "The exclusive ageLOC technology patented in the United States has the ability to directly impact deep within the skin. It helps regenerate cellular vitality, bringing a youthful appearance to women, representing a breakthrough advancement in safe and effective beauty technology. We guarantee authentic product lines.",
+        "certificate": "/assets/why-1.jpg"
+      },
+      {
+        "id": 2,
+        "number": "02",
+        "title": "Immediate results from the first experience",
+        "description": "Treatment combining advanced technology with acupressure therapy to stimulate the lymphatic system throughout the body, helping to rejuvenate the entire skin complexion.",
+        "images": "/assets/why-2.jpg"
+      },
+      {
+        "id": 3,
+        "number": "03",
+        "title": "Dedicated team of specialists and spa owners",
+        "description": "We always strive to provide the best and most suitable experience for our customers.",
+        "teamImage": "/assets/why-3.jpg"
+      }
+    ]
+  },
+  "partners": {
+    "title": "FOR PARTNERS WHO WANT TO FRANCHISE THE BRAND",
+    "titleEn": "FOR PARTNERS WHO WANT TO FRANCHISE THE BRAND",
+    "buttonText": "View More",
+    "buttonTextEn": "View More",
+    "items": [
+      {
+        "id": 1,
+        "image": "/assets/partner-1.jpg",
+        "title": "Small scale: optimal investment for setup, decor, equipment, and process training",
+        "subtitle": "Criteria: Small but beautiful, professional, 100% USA product quality"
+      },
+      {
+        "id": 2,
+        "image": "/assets/partner-2.jpg",
+        "title": "Free professional training and treatment consultation",
+        "subtitle": "Deployment support when expanding franchise chains (free of charge)",
+        "description": "Support customer development using home products across Vietnam and 50 countries."
+      },
+      {
+        "id": 3,
+        "image": "/assets/partner-3.jpg",
+        "title": "Mini HomeSpa deployment time: 3-7 days",
+        "subtitle": "Required space for Mini HomeSpa: 10-30m2"
+      }
+    ]
+  },
+  "footer": {
+    "stats": [
+      {
+        "id": 1,
+        "number": "5+",
+        "label": "Client satisfaction rate"
+      },
+      {
+        "id": 2,
+        "number": "200+",
+        "label": "Branches"
+      }
+    ],
+    "contact": {
+      "brand": "HER S SPA",
+      "hotline": "Hotline:",
+      "email": "Email: hersspa.mus@gmail.com",
+      "website": "Website: http://Hersspa.com"
+    },
+    "customerService": {
+      "title": "CUSTOMER SERVICE",
+      "hours": [
+        "Opening hour",
+        "Opening daily",
+        "Last appointment before 1 DAY"
+      ]
+    },
+    "map": {
+      "title": "Her S spa",
+      "subtitle": "Thẩy dược",
+      "description": "Thư giãn cùng được top bạng Google My Maps. Tao bản đồ của riêng mình."
+    }
+  },
+  "gallery": {
+    "title": "HER S SPA COMMUNITY ACTIVITIES",
+    "images": {
+      "large": ["/assets/gallery-1.jpg", "/assets/gallery-2.jpg"],
+      "grid": [
+        "/assets/gallery-3.jpg",
+        "/assets/gallery-4.jpg",
+        "/assets/gallery-5.jpg",
+        "/assets/gallery-6.jpg",
+        "/assets/gallery-7.jpg",
+        "/assets/gallery-8.jpg",
+        "/assets/gallery-9.jpg",
+        "/assets/gallery-10.jpg",
+        "/assets/gallery-11.jpg",
+        "/assets/gallery-12.jpg"
+      ]
+    }
+  },
+  "benefits": {
+    "title": "RIGHTS & BENEFITS - NO FEES",
+    "titleEn": "RIGHTS & BENEFITS - NO FEES",
+    "items": [
+      {
+        "id": 1,
+        "number": "1",
+        "title": "Use HER S SPA brand throughout your business operations"
+      },
+      {
+        "id": 2,
+        "number": "2",
+        "title": "Receive comprehensive skincare treatment protocols & setup guidance"
+      },
+      {
+        "id": 3,
+        "number": "3",
+        "title": "Support for product and equipment procurement directly from manufacturers"
+      },
+      {
+        "id": 4,
+        "number": "4",
+        "title": "Lifelong advisory partnership for business operations & development"
+      }
+    ]
+  }
+}
