@@ -3,99 +3,28 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Expand, X } from 'lucide-react';
-
-const galleryImages = [
-  {
-    id: 1,
-    src: '/assets/gallery-1.jpg',
-    alt: 'Spa treatment',
-    category: 'Chăm sóc da',
-  },
-  {
-    id: 2,
-    src: '/assets/gallery-2.jpg',
-    alt: 'Facial treatment',
-    category: 'Chăm sóc da',
-  },
-  {
-    id: 3,
-    src: '/assets/gallery-3.jpg',
-    alt: 'Massage therapy',
-    category: 'Massage',
-  },
-  {
-    id: 4,
-    src: '/assets/gallery-4.jpg',
-    alt: 'Spa environment',
-    category: 'Không gian',
-  },
-  {
-    id: 5,
-    src: '/assets/gallery-5.jpg',
-    alt: 'Beauty treatment',
-    category: 'Làm đẹp',
-  },
-  {
-    id: 6,
-    src: '/assets/gallery-6.jpg',
-    alt: 'Relaxation area',
-    category: 'Không gian',
-  },
-  {
-    id: 7,
-    src: '/assets/gallery-7.jpg',
-    alt: 'Facial massage',
-    category: 'Massage',
-  },
-  {
-    id: 8,
-    src: '/assets/gallery-8.jpg',
-    alt: 'Spa products',
-    category: 'Sản phẩm',
-  },
-  {
-    id: 9,
-    src: '/assets/gallery-9.jpg',
-    alt: 'Wellness treatment',
-    category: 'Chăm sóc da',
-  },
-  {
-    id: 10,
-    src: '/assets/gallery-10.jpg',
-    alt: 'Spa interior',
-    category: 'Không gian',
-  },
-  {
-    id: 11,
-    src: '/assets/gallery-11.jpg',
-    alt: 'Beauty products',
-    category: 'Sản phẩm',
-  },
-  {
-    id: 12,
-    src: '/assets/gallery-12.jpg',
-    alt: 'Relaxation therapy',
-    category: 'Massage',
-  },
-];
-
-const categories = [
-  'Tất cả',
-  'Chăm sóc da',
-  'Massage',
-  'Không gian',
-  'Sản phẩm',
-  'Làm đẹp',
-];
+import data from '@/data/data.json';
 
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
+  const { title, description, categories, images } = data.gallery;
+  const galleryCategories = categories.map((cat) => cat.name);
+  const galleryImages = images.map((img) => ({
+    id: img.id,
+    src: img.src,
+    alt: img.alt,
+    category: img.category,
+  }));
+
+  const [selectedCategory, setSelectedCategory] = useState(
+    galleryCategories[0]
+  );
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const section = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -109,26 +38,27 @@ const Gallery = () => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (section) {
+      observer.observe(section);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (section) {
+        observer.unobserve(section);
       }
     };
   }, []);
 
   useEffect(() => {
-    if (selectedCategory === 'Tất cả') {
+    if (selectedCategory === galleryCategories[0]) {
       setFilteredImages(galleryImages);
     } else {
       setFilteredImages(
         galleryImages.filter((image) => image.category === selectedCategory)
       );
     }
-  }, [selectedCategory]);
+    galleryImages.filter((image) => image.category === selectedCategory);
+  }, [selectedCategory, galleryCategories, galleryImages]);
 
   const openLightbox = (id: number) => {
     setSelectedImage(id);
@@ -165,28 +95,27 @@ const Gallery = () => {
       ref={sectionRef}
       className="py-16 bg-white scroll-mt-20"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
-            Thư Viện Hình Ảnh
+            {title}
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Khám phá không gian và dịch vụ tại Her S Spa Hoa Thạch Thảo qua bộ
-            sưu tập hình ảnh của chúng tôi
+            {description}
           </p>
         </div>
 
         {/* Filter Categories */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {categories.map((category) => (
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {galleryCategories.map((category, index) => (
             <button
-              key={category}
+              key={index}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-3 sm:px-4 py-2 rounded-full transition-all text-sm sm:text-base ${
                 selectedCategory === category
-                  ? 'bg-secondary text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
               {category}
@@ -196,7 +125,7 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div
-          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 transition-all duration-1000 ${
+          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -210,12 +139,13 @@ const Gallery = () => {
                 src={image.src}
                 alt={image.alt}
                 fill
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <button
                   onClick={() => openLightbox(image.id)}
-                  className="bg-white/90 text-secondary p-3 rounded-full hover:bg-white transition-all duration-300"
+                  className="bg-white/90 text-secondary p-2 sm:p-3 rounded-full hover:bg-white transition-all duration-300"
                 >
                   <Expand className="w-5 h-5" />
                 </button>
@@ -261,6 +191,7 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.alt}
                     fill
+                    sizes="100vw"
                     className="object-contain"
                   />
                 ))}

@@ -8,6 +8,7 @@ import { Star, Users, Award, Heart } from 'lucide-react';
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const { title, subtitle, description, features, images } = data.about;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,8 +43,8 @@ const About = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/assets/about-thumbnail.jpg"
-            alt="Her S Spa Hoa Thạch Thảo"
+            src={data.about.thumbnail}
+            alt={title}
             fill
             className="object-cover"
             priority
@@ -65,8 +66,7 @@ const About = () => {
               <span className="block text-accent">Hoa Thạch Thảo</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-              Hệ sinh thái làm đẹp đáng tin cậy, mang đến trải nghiệm thư giãn
-              và chăm sóc sắc đẹp chuyên nghiệp
+              {subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-secondary to-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-secondary/80 hover:to-primary/80 transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -109,35 +109,36 @@ const About = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">
-              Về Her S Spa Hoa Thạch Thảo
+              {title}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mb-6"></div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Chúng tôi cam kết mang đến những trải nghiệm làm đẹp tuyệt vời,
-              giúp bạn khám phá vẻ đẹp tự nhiên và tận hưởng những khoảnh khắc
-              thư giãn quý giá.
+              {description}
             </p>
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {[
-              { icon: Users, number: '500+', label: 'Khách hàng hài lòng' },
-              { icon: Award, number: '5+', label: 'Năm kinh nghiệm' },
-              { icon: Star, number: '4.9', label: 'Đánh giá trung bình' },
-              { icon: Heart, number: '100%', label: 'Cam kết chất lượng' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            {data.about.statistics.map((stat, index) => {
+              // Xác định icon dựa trên label
+              let StatIcon = Users;
+              if (stat.label.includes('kinh nghiệm')) StatIcon = Award;
+              else if (stat.label.includes('đánh giá') || stat.label.includes('chất lượng')) StatIcon = Star;
+              else if (stat.label.includes('dịch vụ')) StatIcon = Heart;
+              
+              return (
+                <div key={index} className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <StatIcon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-secondary mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-gray-600">{stat.label}</div>
                 </div>
-                <div className="text-3xl font-bold text-secondary mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+              );
+            })}
+          </div> */}
 
           {/* Main Content Grid */}
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -153,62 +154,21 @@ const About = () => {
                 Tại sao chọn Her S Spa?
               </h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-secondary font-bold">1</span>
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start space-x-4">
+                    <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-secondary font-bold">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-800 mb-2">
+                        {feature.title}
+                      </h4>
+                      <p className="text-gray-600">{feature.description}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Thiết bị thông minh & Công nghệ hiện đại
-                    </h4>
-                    <p className="text-gray-600">
-                      Sử dụng những thiết bị làm đẹp tiên tiến nhất, đảm bảo
-                      hiệu quả và an toàn tuyệt đối.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-secondary font-bold">2</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Liệu trình khoa học & Cá nhân hóa
-                    </h4>
-                    <p className="text-gray-600">
-                      Mỗi khách hàng được thiết kế liệu trình riêng biệt phù hợp
-                      với nhu cầu và tình trạng da.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-secondary font-bold">3</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Đội ngũ chuyên nghiệp
-                    </h4>
-                    <p className="text-gray-600">
-                      Các chuyên viên được đào tạo bài bản, có kinh nghiệm và
-                      tận tâm với nghề.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-secondary font-bold">4</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      Môi trường thư giãn
-                    </h4>
-                    <p className="text-gray-600">
-                      Không gian spa được thiết kế để mang lại cảm giác thư
-                      giãn, thoải mái như ở nhà.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
@@ -224,16 +184,18 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/assets/about-gallery-1.jpg"
-                      alt="Spa interior"
+                      src={images[0].src}
+                      alt={images[0].alt}
+                      title={images[0].title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/assets/about-gallery-2.jpg"
-                      alt="Spa treatment"
+                      src={images[1].src}
+                      alt={images[1].alt}
+                      title={images[1].title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
@@ -242,16 +204,18 @@ const About = () => {
                 <div className="space-y-4 pt-8">
                   <div className="relative h-32 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/assets/about-thumbnail.jpg"
-                      alt="Spa experience"
+                      src={images[2].src}
+                      alt={images[2].alt}
+                      title={images[2].title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="relative h-48 rounded-2xl overflow-hidden shadow-lg">
                     <Image
-                      src="/assets/service-thumbnail.jpg"
-                      alt="Spa services"
+                      src={images[3].src}
+                      alt={images[3].alt}
+                      title={images[3].title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                     />

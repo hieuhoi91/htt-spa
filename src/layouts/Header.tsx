@@ -3,29 +3,12 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
-
-const navItems = [
-  {
-    label: 'Trang chủ',
-    href: '#',
-  },
-  {
-    label: 'Giới thiệu',
-    href: '#about',
-  },
-  {
-    label: 'Dịch vụ',
-    href: '#services',
-  },
-  {
-    label: 'Gallery',
-    href: '#gallery',
-  },
-];
+import data from '@/data/data.json';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { logo, logoAlt, slogan, navigation, contactInfo } = data.header;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +20,7 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (href: string) => {
-    if (href === '#') {
+    if (href === '/' || href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       const element = document.querySelector(href);
@@ -60,7 +43,7 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-1">
               <Phone className="w-4 h-4" />
-              <span>Hotline: 0909 123 456</span>
+              <span>Hotline: {contactInfo.phone}</span>
             </div>
             <div className="hidden md:flex items-center space-x-1">
               <MapPin className="w-4 h-4" />
@@ -80,8 +63,8 @@ const Header = () => {
           <div className="flex items-center space-x-3">
             <div className="relative w-12 h-12 md:w-16 md:h-16">
               <Image
-                src="/assets/logo.png"
-                alt="Her S Spa Hoa Thạch Thảo Logo"
+                src={logo}
+                alt={logoAlt}
                 fill
                 className="object-contain"
                 priority
@@ -89,25 +72,25 @@ const Header = () => {
             </div>
             <div className="hidden sm:block">
               <h1 className="text-xl md:text-2xl font-bold text-primary">
-                Her S Spa
+                Hoa Thạch Thảo
               </h1>
               <p className={`${isScrolled ? 'text-gray-700' : 'text-white'}`}>
-                Hoa Thạch Thảo - Thư giãn & Làm đẹp
+                {slogan}
               </p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navigation.map((item: { title: string; href: string }) => (
               <button
-                key={item.label}
+                key={item.title}
                 onClick={() => scrollToSection(item.href)}
                 className={`${
                   isScrolled ? 'text-gray-700' : 'text-white'
                 } hover:text-secondary font-medium transition-colors duration-200 relative group`}
               >
-                {item.label}
+                {item.title}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-200 group-hover:w-full"></span>
               </button>
             ))}
@@ -137,13 +120,13 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border">
             <div className="flex flex-col space-y-4 px-4">
-              {navItems.map((item) => (
+              {navigation.map((item: { title: string; href: string }) => (
                 <button
-                  key={item.label}
+                  key={item.title}
                   onClick={() => scrollToSection(item.href)}
                   className="text-left text-gray-700 hover:text-secondary font-medium py-2 transition-colors duration-200"
                 >
-                  {item.label}
+                  {item.title}
                 </button>
               ))}
               <button className="bg-gradient-to-r from-secondary to-primary text-white px-6 py-3 rounded-full font-medium hover:from-secondary/80 hover:to-primary/80 transition-all duration-200 shadow-lg mt-4">

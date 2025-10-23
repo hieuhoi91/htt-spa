@@ -1,7 +1,7 @@
 import About from '@/components/About';
 import Gallery from '@/components/Gallery';
 import Services from '@/components/Services';
-import Whysochoose from '@/components/Whysochoose';
+import Testimonial from '@/components/Testimonial';
 import MissionVision from '@/components/MissionVision';
 
 export default function Home() {
@@ -9,8 +9,8 @@ export default function Home() {
     <div className="w-full overflow-x-hidden">
       <About />
       <MissionVision />
-      <Whysochoose />
       <Services />
+      <Testimonial />
       <Gallery />
     </div>
   );

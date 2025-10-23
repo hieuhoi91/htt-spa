@@ -1,22 +1,52 @@
-import {
-  Facebook,
-  GlobeIcon,
-  Instagram,
-  MailIcon,
-  MapPin,
-  PhoneIcon,
-} from 'lucide-react';
+'use client';
+
+import React from 'react';
+import { Mail, MapPin, PhoneIcon } from 'lucide-react';
+
+import { FaTiktok, FaFacebookF } from 'react-icons/fa';
 import Image from 'next/image';
-import Link from 'next/link';
+import data from '@/data/data.json';
 
 const Footer = () => {
+  const {
+    logo,
+    logoAlt,
+    description,
+    socialMedia,
+    contact,
+    copyright,
+    backgroundImage,
+    newsletter,
+  }: {
+    logo: string;
+    logoAlt: string;
+    description: string;
+    socialMedia: { platform: string; url: string; icon: string }[];
+    contact: {
+      address: string;
+      phone: string;
+      email: string;
+      website: string;
+      workingHours: string;
+    };
+    copyright: string;
+    backgroundImage: string;
+    newsletter: {
+      title: string;
+      description: string;
+      placeholder: string;
+      buttonText: string;
+    };
+  } = data.footer;
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="relative bg-gradient-to-br from-secondary/30 to-primary/20 pt-16 pb-8">
       {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-10"
         style={{
-          backgroundImage: "url('/assets/footer.jpg')",
+          backgroundImage: `url('${backgroundImage || '/assets/footer.jpg'}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           mixBlendMode: 'overlay',
@@ -26,160 +56,149 @@ const Footer = () => {
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-primary/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo và giới thiệu */}
-          <div className="space-y-4">
-            <Link href="/" className="inline-block">
+          {/* Column 1 - About */}
+          <div>
+            <div className="mb-6">
               <Image
-                src="/assets/logo.png"
-                alt="Hoa Thạch Thảo"
-                width={150}
+                src={logo}
+                alt={logoAlt || 'Her S Spa Logo'}
+                width={160}
                 height={60}
-                className="h-auto"
+                className="h-auto mx-auto md:mx-0"
               />
-            </Link>
-            <p className="text-muted-foreground">
-              Hoa Thạch Thảo - Nơi chăm sóc sắc đẹp và sức khỏe toàn diện cho
-              phái đẹp với các dịch vụ spa cao cấp và chuyên nghiệp.
+            </div>
+            <p className="text-gray-600 mb-6 break-words text-sm md:text-base">
+              {description}
             </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              {socialMedia &&
+                socialMedia.map(
+                  (
+                    social: {
+                      platform: string;
+                      url: string;
+                      icon: string;
+                    },
+                    index: number
+                  ) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all duration-300"
+                      aria-label={social.platform}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {social.icon === 'facebook' && (
+                        <FaFacebookF className="w-5 h-5" />
+                      )}
+                      {social.icon === 'tiktok' && (
+                        <FaTiktok className="w-5 h-5" />
+                      )}
+                    </a>
+                  )
+                )}
+            </div>
           </div>
 
-          {/* Thông tin liên hệ */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Liên Hệ</h3>
+          {/* Column 2 - Quick Links
+          <div>
+            <h3 className="text-xl font-bold text-secondary mb-6">
+              Liên Kết Nhanh
+            </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span>
-                  73bis Thạch Thị Thanh, Phường Tân Định, Quận 1, Hồ Chí Minh,
-                  Vietnam
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <PhoneIcon className="h-5 w-5 text-primary shrink-0" />
-                <a
-                  href="tel:+84901234567"
-                  className="hover:text-primary transition-colors"
-                >
-                  090 912 3456
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <MailIcon className="h-5 w-5 text-primary shrink-0" />
-                <a
-                  href="mailto:hoathachthaonuskin@gmail.com"
-                  className="hover:text-primary transition-colors"
-                >
-                  hoathachthaonuskin@gmail.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <GlobeIcon className="h-5 w-5 text-primary shrink-0" />
-                <a
-                  href="https://hoathachthao.com"
-                  className="hover:text-primary transition-colors"
-                >
-                  hoathachthao.com
-                </a>
-              </li>
+              {quickLinks &&
+                quickLinks.map(
+                  (
+                    link: { id: number; title: string; url: string },
+                    index: number
+                  ) => (
+                    <li key={index}>
+                      <a
+                        href={link.url}
+                        className="text-gray-600 hover:text-primary transition-colors flex items-center"
+                      >
+                        <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
+                        {link.title}
+                      </a>
+                    </li>
+                  )
+                )}
+            </ul>
+          </div> */}
+
+          {/* Column 4 - Contact */}
+          <div>
+            <h3 className="text-xl font-bold text-secondary mb-6">Liên Hệ</h3>
+            <ul className="space-y-4">
+              {contact.address && (
+                <li className="flex items-start">
+                  <MapPin className="text-primary mr-3 h-5 w-5 flex-shrink-0 mt-1" />
+                  <span className="text-gray-600">{contact.address}</span>
+                </li>
+              )}
+              {contact.phone && (
+                <li className="flex items-center">
+                  <PhoneIcon className="text-primary mr-3 h-5 w-5 flex-shrink-0" />
+                  <span className="text-gray-600">{contact.phone}</span>
+                </li>
+              )}
+              {contact.email && (
+                <li className="flex items-center">
+                  <Mail className="text-primary mr-3 h-5 w-5 flex-shrink-0" />
+                  <span className="text-gray-600">{contact.email}</span>
+                </li>
+              )}
+              {contact.workingHours && (
+                <li className="flex items-start">
+                  <svg
+                    className="text-primary mr-3 h-5 w-5 flex-shrink-0 mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <span className="text-gray-600">{contact.workingHours}</span>
+                </li>
+              )}
             </ul>
           </div>
 
-          {/* Menu nhanh */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Dịch Vụ</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="#services"
-                  className="hover:text-primary transition-colors"
-                >
-                  Chăm sóc da
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="hover:text-primary transition-colors"
-                >
-                  Massage trị liệu
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="hover:text-primary transition-colors"
-                >
-                  Tắm trắng
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="hover:text-primary transition-colors"
-                >
-                  Điều trị thâm nám
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="hover:text-primary transition-colors"
-                >
-                  Phun xăm thẩm mỹ
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Đăng ký nhận tin */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-primary">Đăng Ký Nhận Tin</h3>
-            <p className="text-muted-foreground">
-              Đăng ký để nhận thông tin khuyến mãi mới nhất
-            </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Email của bạn"
-                className="w-full px-4 py-2 rounded-md border border-muted focus:outline-none focus:ring-2 focus:ring-primary/50"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-primary hover:bg-primary/90 text-white py-2 rounded-md transition-colors"
-              >
-                Đăng Ký
-              </button>
-            </form>
+          <div className="col-span-2">
+            {newsletter && (
+              <div className="max-w-xl mx-auto text-center">
+                <h3 className="text-xl font-bold text-secondary mb-4">
+                  {newsletter.title}
+                </h3>
+                <p className="text-gray-600 mb-6">{newsletter.description}</p>
+                <form className="flex flex-col sm:flex-row gap-2">
+                  <input
+                    type="email"
+                    placeholder={newsletter.placeholder || 'Nhập email của bạn'}
+                    className="px-4 py-3 rounded-lg flex-grow bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                  <button
+                    type="submit"
+                    className="px-6 py-3 bg-gradient-to-r from-secondary to-primary text-white font-medium rounded-lg hover:shadow-lg transition-all duration-300 w-full sm:w-auto"
+                  >
+                    {newsletter.buttonText || 'Đăng Ký'}
+                  </button>
+                </form>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Phần dưới footer */}
-        <div className="mt-12 pt-6 border-t border-muted flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Hoa Thạch Thảo. Tất cả quyền được bảo
-            lưu.
-          </p>
-          <div className="flex items-center gap-4">
-            <a
-              href="https://www.facebook.com/profile.php?id=61578049594663&locale=vi_VN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-9 w-9 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
-            >
-              <Facebook className="h-5 w-5 text-primary" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="h-9 w-9 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
-            >
-              <Instagram className="h-5 w-5 text-primary" />
-            </a>
-          </div>
+        <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500">
+          <p>{copyright.replace('{year}', currentYear.toString())}</p>
         </div>
       </div>
     </footer>
