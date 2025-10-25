@@ -59,7 +59,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1 - About */}
-          <div>
+          <div className="text-center md:text-left">
             <div className="mb-6">
               <Image
                 src={logo}
@@ -69,7 +69,7 @@ const Footer = () => {
                 className="h-auto mx-auto md:mx-0"
               />
             </div>
-            <p className="text-gray-600 mb-6 break-words text-sm md:text-base">
+            <p className="text-gray-600 mb-6 break-words text-sm md:text-base px-4 md:px-0">
               {description}
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-3">
@@ -92,10 +92,10 @@ const Footer = () => {
                       rel="noopener noreferrer"
                     >
                       {social.icon === 'facebook' && (
-                        <FaFacebookF className="w-5 h-5" />
+                        <FaFacebookF className="w-4 h-4 sm:w-5 sm:h-5" />
                       )}
                       {social.icon === 'tiktok' && (
-                        <FaTiktok className="w-5 h-5" />
+                        <FaTiktok className="w-4 h-4 sm:w-5 sm:h-5" />
                       )}
                     </a>
                   )
@@ -130,31 +130,37 @@ const Footer = () => {
           </div> */}
 
           {/* Column 4 - Contact */}
-          <div>
+          <div className="text-center md:text-left mt-6 md:mt-0 px-4 md:px-0">
             <h3 className="text-xl font-bold text-secondary mb-6">Liên Hệ</h3>
-            <ul className="space-y-4">
+            <ul className="space-y-6 md:space-y-4">
               {contact.address && (
-                <li className="flex items-start">
-                  <MapPin className="text-primary mr-3 h-5 w-5 flex-shrink-0 mt-1" />
-                  <span className="text-gray-600">{contact.address}</span>
+                <li className="flex items-center gap-2 justify-start md:flex-row">
+                  <MapPin className="text-primary mr-0 md:mr-3 h-6 w-6 md:h-5 md:w-5 flex-shrink-0 mb-3 md:mb-0 md:mt-1 md:mx-0" />
+                  <span className="text-gray-600 text-left">
+                    {contact.address}
+                  </span>
                 </li>
               )}
               {contact.phone && (
-                <li className="flex items-center">
-                  <PhoneIcon className="text-primary mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-gray-600">{contact.phone}</span>
+                <li className="flex gap-2 justify-start md:flex-row">
+                  <PhoneIcon className="text-primary mr-0 md:mr-3 h-6 w-6 md:h-5 md:w-5 flex-shrink-0 mb-3 md:mb-0 md:mx-0" />
+                  <span className="text-gray-600 text-center md:text-left">
+                    {contact.phone}
+                  </span>
                 </li>
               )}
               {contact.email && (
-                <li className="flex items-center">
-                  <Mail className="text-primary mr-3 h-5 w-5 flex-shrink-0" />
-                  <span className="text-gray-600">{contact.email}</span>
+                <li className="flex gap-2 justify-start md:flex-row">
+                  <Mail className="text-primary mr-0 md:mr-3 h-6 w-6 md:h-5 md:w-5 flex-shrink-0 mb-3 md:mb-0 md:mx-0" />
+                  <span className="text-gray-600 text-center md:text-left break-all md:break-normal">
+                    {contact.email}
+                  </span>
                 </li>
               )}
               {contact.workingHours && (
-                <li className="flex items-start">
+                <li className="flex justify-start gap-2 md:flex-row">
                   <svg
-                    className="text-primary mr-3 h-5 w-5 flex-shrink-0 mt-1"
+                    className="text-primary mr-0 md:mr-3 h-6 w-6 md:h-5 md:w-5 flex-shrink-0 mb-3 md:mb-0 md:mt-1 md:mx-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -166,20 +172,24 @@ const Footer = () => {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  <span className="text-gray-600">{contact.workingHours}</span>
+                  <span className="text-gray-600 text-center h-full md:text-left">
+                    {contact.workingHours}
+                  </span>
                 </li>
               )}
             </ul>
           </div>
 
-          <div className="col-span-2">
+          <div className="col-span-1 lg:col-span-2 mt-6 md:mt-0">
             {newsletter && (
               <div className="max-w-xl mx-auto text-center">
                 <h3 className="text-xl font-bold text-secondary mb-4">
                   {newsletter.title}
                 </h3>
-                <p className="text-gray-600 mb-6">{newsletter.description}</p>
-                <form className="flex flex-col sm:flex-row gap-2">
+                <p className="text-gray-600 mb-6 px-4 md:px-0">
+                  {newsletter.description}
+                </p>
+                <form className="flex flex-col sm:flex-row gap-2 px-4 sm:px-0">
                   <input
                     type="email"
                     placeholder={newsletter.placeholder || 'Nhập email của bạn'}

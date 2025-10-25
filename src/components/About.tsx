@@ -3,7 +3,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import data from '@/data/data.json';
 import Image from 'next/image';
-import { Star, Users, Award, Heart } from 'lucide-react';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

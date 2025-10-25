@@ -20,10 +20,13 @@ const Gallery = () => {
   );
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Đặt isVisible thành true ngay lập tức để hiển thị ảnh
+    setIsVisible(true);
+    
     const section = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -125,14 +128,12 @@ const Gallery = () => {
 
         {/* Gallery Grid */}
         <div
-          className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 transition-all duration-1000"
         >
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square"
+              className="relative group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square min-h-[250px]"
             >
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 z-10"></div>
               <Image
@@ -141,6 +142,8 @@ const Gallery = () => {
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                priority
+                loading="eager"
               />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                 <button

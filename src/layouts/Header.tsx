@@ -19,6 +19,22 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Thêm effect để chặn cuộn khi menu mobile được mở
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Chặn cuộn trang
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Cho phép cuộn trang trở lại
+      document.body.style.overflow = 'auto';
+    }
+
+    // Cleanup khi component unmount
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
+
   const scrollToSection = (href: string) => {
     if (href === '/' || href === '#') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -118,7 +134,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg shadow-lg border">
+          <div className="lg:hidden mt-4 py-4 bg-white/95 backdrop-blur-md rounded-lg border">
             <div className="flex flex-col space-y-4 px-4">
               {navigation.map((item: { title: string; href: string }) => (
                 <button

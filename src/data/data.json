@@ -226,7 +226,7 @@
         "avatar": "/assets/avatar-1.jpg",
         "rating": 5,
         "comment": "Lúc đầu cũng không tin máy nhỏ gọn vậy có hiệu quả mà không ngờ chỉ sau 1 buổi đến trải nghiệm dịch vụ tại spa mình đã cảm nhận được sự khác biệt. Mình nghĩ chị em nào cũng nên dành thời gian ít nhất 1 tuần 1 lần đến Hoa Thạch Thảo để chăm sóc sắc đẹp.",
-        "service": "Chăm sóc da mặt"
+        "service": "Chăm sóc da tiêu chuẩn"
       },
       {
         "id": 2,
@@ -234,7 +234,7 @@
         "avatar": "/assets/avatar-2.jpg",
         "rating": 5,
         "comment": "Da mình căng bóng rõ sau vài buổi, nếp nhăn mờ hẳn. Cảm giác rất khác so với chăm sóc thông thường.",
-        "service": "Massage trị liệu"
+        "service": "Chăm sóc da tiêu chuẩn"
       },
       {
         "id": 3,
@@ -242,7 +242,7 @@
         "avatar": "/assets/avatar-3.jpg",
         "rating": 5,
         "comment": "Mình thích nhất là không xâm lấn, an toàn mà hiệu quả thấy rõ.",
-        "service": "Triệt lông"
+        "service": "Chăm sóc da tiêu chuẩn"
       }
     ],
     "callToAction": {

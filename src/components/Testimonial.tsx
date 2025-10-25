@@ -6,7 +6,7 @@ import data from '@/data/data.json';
 
 const Testimonial = () => {
   const { testimonials, callToAction } = data.whyChooseUs;
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -24,6 +24,9 @@ const Testimonial = () => {
         rootMargin: '50px',
       }
     );
+
+    // Đảm bảo ảnh hiển thị ngay từ đầu
+    setIsVisible(true);
 
     if (sectionElement) {
       observer.observe(sectionElement);

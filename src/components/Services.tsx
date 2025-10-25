@@ -5,7 +5,7 @@ import Image from 'next/image';
 import data from '@/data/data.json';
 
 const Services = () => {
-  const [_, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const { title, subtitle, serviceList: services } = data.services;
@@ -24,6 +24,9 @@ const Services = () => {
         rootMargin: '50px',
       }
     );
+
+    // Đảm bảo ảnh hiển thị ngay từ đầu
+    setIsVisible(true);
 
     if (sectionElement) {
       observer.observe(sectionElement);
