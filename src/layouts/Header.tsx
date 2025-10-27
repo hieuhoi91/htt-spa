@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X, Phone, MapPin } from 'lucide-react';
 import data from '@/data/data.json';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,9 +115,12 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="bg-gradient-to-r from-secondary to-primary text-white px-6 py-2 rounded-full font-medium hover:from-secondary/80 hover:to-primary/80 transition-all duration-200 shadow-lg hover:shadow-xl">
+            <Link
+              href="https://m.me/spahoathachthao"
+              className="bg-gradient-to-r from-secondary to-primary text-white px-6 py-2 rounded-full font-medium hover:from-secondary/80 hover:to-primary/80 transition-all duration-200 shadow-lg hover:shadow-xl"
+            >
               Đặt lịch ngay
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}

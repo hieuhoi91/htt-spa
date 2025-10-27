@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import data from '@/data/data.json';
+import Link from 'next/link';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -104,12 +105,12 @@ const Services = () => {
                           </span>
                         )}
                       </div>
-                      <a
-                        href="#booking"
+                      <Link
+                        href={`https://m.me/spahoathachthao?text=Tôi cần tư vấn dịch vụ: ${service.title}`}
                         className="px-4 py-2 bg-gradient-to-r from-secondary to-primary text-white rounded-full text-sm hover:shadow-lg transition-all duration-300 text-nowrap"
                       >
                         Đặt lịch
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

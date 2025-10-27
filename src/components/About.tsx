@@ -72,9 +72,12 @@ const About = () => {
               <button className="bg-gradient-to-r from-secondary to-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-secondary/80 hover:to-primary/80 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <a href="#services">Khám phá dịch vụ</a>
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
-                <Link href="#contact">Đặt lịch ngay</Link>
-              </button>
+              <Link
+                href="https://m.me/spahoathachthao"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
+              >
+                Đặt lịch ngay
+              </Link>
             </div>
           </div>
         </div>

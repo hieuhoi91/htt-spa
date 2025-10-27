@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import data from '@/data/data.json';
+import Link from 'next/link';
 
 const Testimonial = () => {
   const { testimonials, callToAction } = data.whyChooseUs;
@@ -135,12 +136,12 @@ const Testimonial = () => {
                   <p className="text-gray-600 mb-4">
                     {callToAction.description}
                   </p>
-                  <a
-                    href={callToAction.buttonLink}
+                  <Link
+                    href="https://m.me/spahoathachthao"
                     className="inline-block px-6 py-2 bg-gradient-to-r from-secondary to-primary text-white font-medium rounded-full hover:shadow-lg transition-all duration-300"
                   >
                     {callToAction.buttonText}
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
