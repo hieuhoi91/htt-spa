@@ -40,7 +40,7 @@ const MissionVision = () => {
               </h3>
             </div>
             <div className="space-y-4 text-gray-700 leading-relaxed">
-              <p className="mb-4">{mission.description}</p>
+              {/* <p className="mb-4">{mission.description}</p> */}
               {mission.keyPoints.map((point, index) => (
                 <p key={index} className="flex items-start">
                   <span
@@ -85,7 +85,7 @@ const MissionVision = () => {
               </h3>
             </div>
             <div className="text-gray-700 leading-relaxed">
-              <p className="mb-4">{vision.description}</p>
+              {/* <p className="mb-4">{vision.description}</p> */}
               <div className="space-y-2">
                 {vision.keyPoints.map((point, index) => (
                   <p key={index} className="flex items-start">

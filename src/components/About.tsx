@@ -3,11 +3,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import data from '@/data/data.json';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const { title, subtitle, description, features, images } = data.about;
+  const { title, subtitle, description, features, images, notice } = data.about;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,19 +61,19 @@ const About = () => {
                 : 'opacity-0 translate-y-8'
             }`}
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-accent">
               Her S Spa
-              <span className="block text-accent">Hoa Thạch Thảo</span>
+              <span className="block text-secondary">Hoa Thạch Thảo</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
               {subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-secondary to-primary text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-secondary/80 hover:to-primary/80 transition-all duration-300 shadow-lg hover:shadow-xl">
-                Khám phá dịch vụ
+                <a href="#services">Khám phá dịch vụ</a>
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
-                Đặt lịch ngay
+                <Link href="#contact">Đặt lịch ngay</Link>
               </button>
             </div>
           </div>
@@ -154,20 +155,23 @@ const About = () => {
               </h3>
               <div className="space-y-6">
                 {features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-4">
+                  <div key={index} className="flex items-center space-x-4">
                     <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <span className="text-secondary font-bold">
                         {index + 1}
                       </span>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-2">
+                      {/* <h4 className="font-semibold text-gray-800 mb-2">
                         {feature.title}
-                      </h4>
+                      </h4> */}
                       <p className="text-gray-600">{feature.description}</p>
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8">
+                <p className="text-gray-600">{notice}</p>
               </div>
             </div>
 

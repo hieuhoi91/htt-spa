@@ -10,14 +10,14 @@
       { "title": "Thư viện", "href": "#gallery" }
     ],
     "contactInfo": {
-      "phone": "0909 123 456",
+      "phone": "090 240 2768",
       "email": "hoathachthaonuskin@gmail.com"
     }
   },
   "about": {
     "title": "Về Her S Spa Hoa Thạch Thảo",
     "subtitle": "Chăm sóc sắc đẹp toàn diện",
-    "description": "Hoa Thạch Thảo là trung tâm spa cao cấp chuyên cung cấp các dịch vụ chăm sóc sắc đẹp toàn diện cho phái đẹp. Với đội ngũ chuyên gia giàu kinh nghiệm và trang thiết bị hiện đại, chúng tôi cam kết mang đến cho khách hàng những trải nghiệm thư giãn và kết quả tốt nhất.",
+    "description": "Tại Her S Spa Hoa Thạch Thảo, mỗi phút giây chăm sóc không chỉ là làm đẹp, mà còn là hành trình tái tạo năng lượng và yêu thương chính mình. Với triết lý “Đem chuẩn spa vào từng giây phút yêu mình”, chúng tôi mang đến trải nghiệm thư giãn - tinh tế - chuẩn khoa học, kết hợp giữa công nghệ làm đẹp hiện đại và sự ân cần, tỉ mỉ trong từng liệu trình. Dù ở spa hay tại nhà, Her S Spa Hoa Thạch Thảo luôn đồng hành cùng bạn trong hành trình giữ gìn vẻ đẹp khỏe mạnh, trẻ trung và tự tin từ bên trong. ",
     "yearFounded": 2018,
     "location": "Thành phố Hồ Chí Minh",
     "thumbnail": "/assets/about-thumbnail.jpg",
@@ -45,52 +45,38 @@
     ],
     "features": [
       {
-        "title": "Chuyên gia giàu kinh nghiệm",
-        "description": "Đội ngũ chuyên gia của chúng tôi được đào tạo bài bản và có nhiều năm kinh nghiệm trong lĩnh vực làm đẹp.",
+        "description": "Đội ngũ nhân viên tận tâm, chuyên nghiệp.",
         "icon": "user-group"
       },
       {
-        "title": "Trang thiết bị hiện đại",
-        "description": "Chúng tôi sử dụng các trang thiết bị và công nghệ hiện đại nhất trong lĩnh vực spa và làm đẹp.",
+        "description": "Không gian thư giãn như ở nhà.",
         "icon": "sparkles"
       },
       {
-        "title": "Sản phẩm cao cấp",
-        "description": "Các sản phẩm sử dụng tại spa đều là các thương hiệu uy tín, an toàn và hiệu quả.",
+        "description": "Tất cả thiết bị và sản phẩm sử dụng trong spa đều đến từ thương hiệu lớn, uy tín toàn cầu. Ứng dụng công nghệ được kiểm chứng khoa học, an toàn cho da nhạy cảm, và đặc biệt không xâm lấn.",
         "icon": "star"
       },
       {
-        "title": "Không gian sang trọng",
-        "description": "Không gian được thiết kế tinh tế, sang trọng mang đến cảm giác thư giãn tuyệt đối cho khách hàng.",
+        "description": "Không dừng lại ở việc đến spa, bạn hoàn toàn có thể mang spa về nhà với thiết bị nhỏ gọn, thông minh - được kết nối App cá nhân hóa.",
         "icon": "home"
       }
     ],
-    "statistics": [
-      { "value": "5000+", "label": "Khách hàng hài lòng" },
-      { "value": "20+", "label": "Chuyên gia làm đẹp" },
-      { "value": "30+", "label": "Dịch vụ chuyên nghiệp" },
-      { "value": "5", "label": "Năm kinh nghiệm" }
-    ]
+    "notice": "Các App sẽ theo dõi tình trạng da/cơ thể, gợi ý chế độ chăm sóc phù hợp, giúp bạn chủ động trong việc làm đẹp, nâng cao hiệu quả mà không cần lệ thuộc vào spa."
   },
   "missionVision": {
     "mission": {
       "title": "Sứ mệnh",
-      "description": "Mang đến cho khách hàng những dịch vụ chăm sóc sắc đẹp chất lượng cao, an toàn và hiệu quả, giúp phái đẹp tự tin tỏa sáng mỗi ngày.",
       "keyPoints": [
-        "Cung cấp dịch vụ chất lượng cao",
-        "Đảm bảo an toàn cho khách hàng",
-        "Liên tục cập nhật công nghệ mới",
-        "Tạo môi trường thư giãn thoải mái"
+        "Mang đến trải nghiệm làm đẹp thư giãn, nhẹ nhàng, như một khoảng nghỉ tinh thần cho khách hàng.",
+        "Giúp mỗi người phụ nữ chủ động chăm sóc bản thân bằng thiết bị thông minh, liệu trình khoa học và app cá nhân hóa, để đẹp hơn mỗi ngày mà không phụ thuộc vào spa.",
+        "Tạo cơ hội kinh doanh bền vững cho những ai yêu làm đẹp, với mô hình nhượng quyền tối ưu chi phí, dễ vận hành, mang chuẩn spa đến gần cộng đồng."
       ]
     },
     "vision": {
       "title": "Tầm nhìn",
-      "description": "Trở thành thương hiệu spa hàng đầu tại Việt Nam, được khách hàng tin tưởng và lựa chọn khi có nhu cầu chăm sóc sắc đẹp.",
       "keyPoints": [
-        "Phát triển thành chuỗi spa toàn quốc",
-        "Đào tạo đội ngũ chuyên gia giỏi",
-        "Nghiên cứu và phát triển dịch vụ mới",
-        "Xây dựng cộng đồng khách hàng thân thiết"
+        "Her S Spa Hoa Thạch Thảo mong muốn trở thành hệ sinh thái làm đẹp đáng tin cậy, giúp mỗi phụ nữ hiện đại có thể tự tin chăm sóc sắc đẹp và sức khỏe ngay tại nhà, vẫn tận hưởng trọn vẹn trải nghiệm chuẩn spa.",
+        "Chúng tôi không ngừng phát triển dịch vụ, sản phẩm, thiết bị thông minh và mô hình nhượng quyền dễ vận hành, để lan tỏa lối sống làm đẹp an toàn, thư giãn, chủ động đến nhiều người hơn."
       ]
     },
     "coreServices": {
@@ -142,7 +128,7 @@
       {
         "id": 3,
         "title": "Chăm sóc da chuyên sâu",
-        "description": "Giúp làm sạch sâu, làm da sáng bóng, nâng cơ thể trẻ hóa bằng công nghệ ageLOC.",
+        "description": "Giúp làm sạch sâu, làm da sáng bóng, nâng cơ trẻ hóa bằng công nghệ ageLOC.",
         "image": "/assets/service-3.jpg",
         "price": "490.000đ",
         "duration": "60 phút",
@@ -178,47 +164,6 @@
     ]
   },
   "whyChooseUs": {
-    "title": "Tại Sao Chọn Her S Spa Hoa Thạch Thảo?",
-    "subtitle": "Sự khác biệt tạo nên thương hiệu",
-    "description": "Chúng tôi cam kết mang đến trải nghiệm chăm sóc sắc đẹp tuyệt vời nhất với đội ngũ chuyên gia và công nghệ hiện đại",
-    "reasons": [
-      {
-        "id": 1,
-        "title": "Chuyên Gia Giàu Kinh Nghiệm",
-        "description": "Đội ngũ chuyên gia của chúng tôi được đào tạo bài bản và có nhiều năm kinh nghiệm trong lĩnh vực chăm sóc sắc đẹp.",
-        "icon": "CheckCircle"
-      },
-      {
-        "id": 2,
-        "title": "Công Nghệ Hiện Đại",
-        "description": "Chúng tôi sử dụng các công nghệ và thiết bị hiện đại nhất, đảm bảo hiệu quả tối ưu cho mọi liệu trình.",
-        "icon": "CheckCircle"
-      },
-      {
-        "id": 3,
-        "title": "Sản Phẩm Cao Cấp",
-        "description": "Chỉ sử dụng các sản phẩm chăm sóc da cao cấp, an toàn và được chứng nhận từ các thương hiệu uy tín.",
-        "icon": "CheckCircle"
-      },
-      {
-        "id": 4,
-        "title": "Không Gian Thư Giãn",
-        "description": "Không gian spa được thiết kế tinh tế, tạo cảm giác thư thái và thoải mái trong suốt quá trình trải nghiệm.",
-        "icon": "CheckCircle"
-      },
-      {
-        "id": 5,
-        "title": "Dịch Vụ Cá Nhân Hóa",
-        "description": "Mỗi liệu trình đều được điều chỉnh phù hợp với nhu cầu và tình trạng cụ thể của từng khách hàng.",
-        "icon": "CheckCircle"
-      },
-      {
-        "id": 6,
-        "title": "Kết Quả Rõ Rệt",
-        "description": "Cam kết mang đến kết quả rõ rệt và lâu dài, giúp khách hàng tự tin và hài lòng với diện mạo của mình.",
-        "icon": "CheckCircle"
-      }
-    ],
     "testimonials": [
       {
         "id": 1,
@@ -226,7 +171,7 @@
         "avatar": "/assets/avatar-1.jpg",
         "rating": 5,
         "comment": "Lúc đầu cũng không tin máy nhỏ gọn vậy có hiệu quả mà không ngờ chỉ sau 1 buổi đến trải nghiệm dịch vụ tại spa mình đã cảm nhận được sự khác biệt. Mình nghĩ chị em nào cũng nên dành thời gian ít nhất 1 tuần 1 lần đến Hoa Thạch Thảo để chăm sóc sắc đẹp.",
-        "service": "Chăm sóc da tiêu chuẩn"
+        "service": "Trẻ hóa da, nâng cơ"
       },
       {
         "id": 2,
@@ -234,7 +179,7 @@
         "avatar": "/assets/avatar-2.jpg",
         "rating": 5,
         "comment": "Da mình căng bóng rõ sau vài buổi, nếp nhăn mờ hẳn. Cảm giác rất khác so với chăm sóc thông thường.",
-        "service": "Chăm sóc da tiêu chuẩn"
+        "service": "Trẻ hóa da, nâng cơ"
       },
       {
         "id": 3,
@@ -242,7 +187,7 @@
         "avatar": "/assets/avatar-3.jpg",
         "rating": 5,
         "comment": "Mình thích nhất là không xâm lấn, an toàn mà hiệu quả thấy rõ.",
-        "service": "Chăm sóc da tiêu chuẩn"
+        "service": "Trẻ hóa da, nâng cơ"
       }
     ],
     "callToAction": {
@@ -561,11 +506,11 @@
     "description": "Hoa Thạch Thảo - Nơi chăm sóc sắc đẹp và sức khỏe toàn diện cho phái đẹp với các dịch vụ spa cao cấp và chuyên nghiệp.",
     "backgroundImage": "/assets/footer.jpg",
     "contact": {
-      "address": "73bis Thạch Thị Thanh, Phường Tân Định, Quận 1, Thành phố Hồ Chí Minh, Vietnam",
-      "phone": "0909 123 456",
+      "address": "7375 Bis, Thạch Thị Thanh, Tân Định, TPHCM",
+      "phone": "090 240 2768",
       "email": "hoathachthaonuskin@gmail.com",
       "website": "hoathachthao.com",
-      "workingHours": "Thứ 2 - Chủ nhật: 8:00 - 22:00"
+      "workingHours": "Thứ 2 - Chủ nhật: 9:00 - 19:00"
     },
     "socialMedia": [
       {

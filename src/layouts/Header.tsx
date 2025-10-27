@@ -63,11 +63,11 @@ const Header = () => {
             </div>
             <div className="hidden md:flex items-center space-x-1">
               <MapPin className="w-4 h-4" />
-              <span>Hoa Thạch Thảo Spa, TP.HCM</span>
+              <span>75 Bis, Thạch Thị Thanh, Tân Định, TPHCM</span>
             </div>
           </div>
           <div className="hidden md:block">
-            <span>Giờ mở cửa: 8:00 - 22:00</span>
+            <span>Giờ mở cửa: 9:00 - 19:00</span>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@ const Header = () => {
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl md:text-2xl font-bold text-primary">
+              <h1 className="text-xl md:text-2xl font-bold text-secondary">
                 Hoa Thạch Thảo
               </h1>
               <p className={`${isScrolled ? 'text-gray-700' : 'text-white'}`}>
